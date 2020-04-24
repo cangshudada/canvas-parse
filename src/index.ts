@@ -1,5 +1,7 @@
-import { getPoint } from './utils/arc2point';
+import { getArcPoint } from './utils/arc2point';
 
-export default {
-    getPoint
+const canvasParse = {
+    getArcPoint
 }
+
+export default canvasParse;

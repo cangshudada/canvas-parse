@@ -1,7 +1,7 @@
-import { getPoint } from '../../utils/arc2point';
+import { getArcPoint } from '../../utils/arc2point';
 import { AcrPoint } from '../../typings/index';
 // 圆解析后的点阵坐标
-const pointArray: AcrPoint[] = getPoint(20, 20, 50, 5);
+const pointArray: AcrPoint[] = getArcPoint(20, 20, 50, 5);
 
 window.onload = function () {
     const cav = <HTMLCanvasElement>document.getElementById('myCanvas');

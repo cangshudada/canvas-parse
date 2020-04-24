@@ -37,6 +37,7 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
+    "parse-canvas": "^1.0.3",
     "typescript": "^3.8.3"
   }
 }

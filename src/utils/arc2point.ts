@@ -1,5 +1,5 @@
 import { AcrPoint } from '../typings/index';
-export const getPoint = (x: number, y: number, arc: number, pointDensity: number = 10): AcrPoint[] => {
+export const getArcPoint = (x: number, y: number, arc: number, pointDensity: number = 10): AcrPoint[] => {
 
     let angle = pointDensity;
     const angleCount = Math.floor(360 / pointDensity);

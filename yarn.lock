@@ -1392,14 +1392,6 @@ camelcase@^5.0.0, camelcase@^5.3.1:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-5.3.1.tgz#e3c9b31569e106811df242f715725a1f4c494320"
   integrity sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==
 
-canvas_algorithm@^1.0.0, canvas_algorithm@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/canvas_algorithm/-/canvas_algorithm-1.0.1.tgz#896641b79d218f2767b54dde0bb8d4a0e7ce9248"
-  integrity sha512-0G1ir82ceOYAv0yHoJU7/J9YcN2FKYLU+uhtmFgY3O+Epy0ba/ax0Vd39j7BsoF/+8EcUxbBByhBzrkKuN3B0w==
-  dependencies:
-    canvas_algorithm "^1.0.0"
-    typescript "^3.8.3"
-
 capture-exit@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/capture-exit/-/capture-exit-2.0.0.tgz#fb953bfaebeb781f62898239dabb426d08a509a4"
@@ -4685,6 +4677,13 @@ parse-asn1@^5.0.0:
     evp_bytestokey "^1.0.0"
     pbkdf2 "^3.0.3"
     safe-buffer "^5.1.1"
+
+parse-canvas@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/parse-canvas/-/parse-canvas-1.0.3.tgz#9c8a0c7a7c026ce0b6d3824bf52d253823449f4f"
+  integrity sha512-DMtnCNEZXQgRYMpoy6rK8ph/m5cDEf0YWgT8Z2mQhS9SrXavcfEYyWo52xwPZ8ZJtRp5GYY2tf1NnHcsVkDcBQ==
+  dependencies:
+    typescript "^3.8.3"
 
 parse-json@^5.0.0:
   version "5.0.0"

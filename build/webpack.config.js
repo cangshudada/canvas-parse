@@ -9,6 +9,7 @@ module.exports = {
         filename: 'canvasParse.js',
         path: path.resolve(__dirname, '../dist'),
         libraryExport: "default",
+        library: "canvasParse",
         libraryTarget: "umd"
     },
     resolve: {
