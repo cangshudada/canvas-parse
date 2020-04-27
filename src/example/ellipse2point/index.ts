@@ -1,7 +1,6 @@
-import { getArcPoint } from '../../utils';
-import { AcrPoint } from '../../types';
-// 圆解析后的点阵坐标
-const pointArray: AcrPoint[] = getArcPoint(50, 5, 100, 100);
+import { ellipse2point } from '../../utils';
+
+const pointArray = ellipse2point(500, 200, 300, 100, 1);
 
 window.onload = function () {
     const cav = <HTMLCanvasElement>document.getElementById('myCanvas');

@@ -1,8 +1,14 @@
-import { getArcPoint } from './utils/arc2point';
-import './example/arc2point/index';
+import { getArcPoint, ellipse2point } from './utils';
+
+// arc2point demo
+// import './example/arc2point/index';
+
+// ellipse2point demo
+// import './example/ellipse2point/index';
 
 const canvasParse = {
-    getArcPoint
+    getArcPoint,
+    ellipse2point
 }
 
 export default canvasParse;

@@ -1,6 +1,13 @@
 import { AcrPoint } from '../types';
 
-export const getArcPoint = (radius: number, pointDensity: number = 10, x: number = 0, y: number = 0): AcrPoint[] => {
+/**
+* @description 传入中心点坐标、半径以及点密度 可直接获取圆上相应点阵坐标
+* @param {number} raduis 圆半径
+* @param {number} [pointDensity=5] 密度 即两点与中心点连线之间的角度 默认值是5 该值不建议超过30
+* @param {number} [x=0] 中心点x坐标
+* @param {number} [y=0] 中心点y坐标
+*/
+export const getArcPoint = (radius: number, pointDensity: number = 5, x: number = 0, y: number = 0): AcrPoint[] => {
 
     let angle = pointDensity;
     const angleCount = Math.floor(360 / pointDensity);
