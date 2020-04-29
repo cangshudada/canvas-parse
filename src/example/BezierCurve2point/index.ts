@@ -1,6 +1,6 @@
-import { bezierCurve2point } from '../../utils';
+import { BezierCurve2point } from '../../utils';
 
-const pointArray = bezierCurve2point.getBezierCurvePoint(150, { x: 300, y: 250 }, { x: 560, y: 700 }, { x: 320, y: 50 }, { x: 700, y: 500 });
+const pointArray = new BezierCurve2point().getBezierCurvePoint(150, { x: 300, y: 250 }, { x: 560, y: 700 }, { x: 320, y: 50 }, { x: 700, y: 500 });
 window.onload = function () {
     const cav = <HTMLCanvasElement>document.getElementById('myCanvas');
     const ctx = cav.getContext('2d');

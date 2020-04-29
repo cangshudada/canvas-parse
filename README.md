@@ -36,6 +36,7 @@ const arcPointsArray = canvasParse.getArcPoint(50, 5, 20, 20);
 // 椭圆生成点阵坐标
 const ellipsePointsArray = canvasParse.ellipse2point(500, 200, 300, 100, 1);
 // 贝塞尔曲线生成点阵坐标
+const bezierCurve2point = new canvasParse.BezierCurve2point();
 const bezierCurvePointsArray = bezierCurve2point.getBezierCurvePoint(150, { x: 300, y: 250 }, { x: 560, y: 700 }, { x: 320, y: 50 }, { x: 700, y: 500 });
 if (ctx) {
     ctx.beginPath();
@@ -76,7 +77,7 @@ if (ctx) {
 * @param {number} [x=0] 中心点x坐标
 * @param {number} [y=0] 中心点y坐标
 */
-const pointArray = getPoint(50, 5, 20, 20);
+const pointArray = canvasParse.getArcPoint(50, 5, 20, 20);
 console.log('pointArray >>',pointArray) 
 // [{x: 49.809,y:4.3577},{x: 49.2403,y: 8.6824},...{x:50,y:0}]
 ```
@@ -108,7 +109,7 @@ console.log('pointArray >>',pointArray)
  * @param {number} [pointDensity=1] 点阵密度(不建议超过5)
  * @returns {AcrPoint[]}
 */
-const pointArray = ellipse2point(500, 200, 300, 100, 1);
+const pointArray = canvasParse.ellipse2point(500, 200, 300, 100, 1);
 console.log('pointArray >>',pointArray) 
 // [{x: 200, y: 200},{x: 201, y: 191.84184116631974},...{x: 200, y: 200}]
 ```
@@ -140,6 +141,7 @@ console.log('pointArray >>',pointArray)
  * @param {AcrPoint} cp2 控制点2
  * @returns {AcrPoint[]}
  */
+const bezierCurve2point = new canvasParse.BezierCurve2point();
 const pointArray = bezierCurve2point.getBezierCurvePoint(150, { x: 300, y: 250 }, { x: 560, y: 700 }, { x: 320, y: 50 }, { x: 700, y: 500 });
 console.log('pointArray >>',pointArray) 
 // [{x: 300, y: 250},{x: 300.4477392592592, y: 246.08639999999994},...{x: 562.7309274074074, y: 695.9669333333334},{x: 560, y: 700}]

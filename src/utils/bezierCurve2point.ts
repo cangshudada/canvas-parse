@@ -116,4 +116,4 @@ class BezierCurve2point {
 }
 
 
-export default new BezierCurve2point();
+export default BezierCurve2point;
