@@ -1,4 +1,4 @@
-import { getArcPoint, ellipse2point } from './utils';
+import { getArcPoint, ellipse2point, bezierCurve2point } from './utils';
 
 // arc2point demo
 // import './example/arc2point/index';
@@ -6,9 +6,13 @@ import { getArcPoint, ellipse2point } from './utils';
 // ellipse2point demo
 // import './example/ellipse2point/index';
 
+// bezierCurve2point demo
+import './example/BezierCurve2point/index';
+
 const canvasParse = {
     getArcPoint,
-    ellipse2point
+    ellipse2point,
+    bezierCurve2point
 }
 
 export default canvasParse;

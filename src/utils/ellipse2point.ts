@@ -12,7 +12,11 @@ import { AcrPoint } from '../types';
  * @param {number} [pointDensity=1] 点阵密度(不建议超过5)
  * @returns {AcrPoint[]}
  */
-export const ellipse2point = (x: number = 0, y: number = 0, radiusX: number, radiusY: number, pointDensity: number = 1): AcrPoint[] => {
+export const ellipse2point = (x: number = 0, y: number = 0, radiusX: number, radiusY: number, pointDensity: number = 1): AcrPoint[] | never => {
+
+    if (pointDensity <= 0) {
+        throw Error('pointDensity cannot be 0 or negative')
+    }
 
     let _radiusX = -radiusX;
     let pointAry: AcrPoint[] = [];

@@ -1,4 +1,4 @@
-import { getArcPoint, ellipse2point } from '../utils';
+import { getArcPoint, ellipse2point, bezierCurve2point } from '../utils';
 
 test('arc2point', () => {
     expect(getArcPoint(50, 180, 0, 0)).toStrictEqual([
@@ -15,5 +15,16 @@ test('ellipse2point', () => {
         { x: 700, y: 200 },
         { x: 200, y: 400 },
         { x: -300, y: 200 }
+    ])
+})
+
+test('bezierParse', () => {
+    expect(bezierCurve2point.getBezierCurvePoint(5, { x: 100, y: 0 }, { x: 100, y: 100 })).toStrictEqual([
+        { x: 100, y: 0 },
+        { x: 100, y: 20 },
+        { x: 100, y: 40 },
+        { x: 100, y: 60 },
+        { x: 100, y: 80 },
+        { x: 100, y: 100 },
     ])
 })

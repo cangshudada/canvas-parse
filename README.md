@@ -35,6 +35,8 @@ const ctx = cav.getContext('2d');
 const arcPointsArray = canvasParse.getArcPoint(50, 5, 20, 20);
 // 椭圆生成点阵坐标
 const ellipsePointsArray = canvasParse.ellipse2point(500, 200, 300, 100, 1);
+// 贝塞尔曲线生成点阵坐标
+const bezierCurvePointsArray = bezierCurve2point.getBezierCurvePoint(150, { x: 300, y: 250 }, { x: 560, y: 700 }, { x: 320, y: 50 }, { x: 700, y: 500 });
 if (ctx) {
     ctx.beginPath();
     for (let index = 0; index < arcPointsArray.length; index++) {
@@ -57,6 +59,15 @@ if (ctx) {
 
 > ### getArcPoint  根据圆生成相应点阵坐标
 
+|    params    |    sense    |  type  | default | reruire |
+| :----------: | :---------: | :----: | :-----: | :-----: |
+|    raduis    |    半径     | number |   no    |  true   |
+| pointDensity | 生成点密度  | number |    5    |  false  |
+|      x       | 中心点x坐标 | number |    0    |  false  |
+|      y       | 中心点y坐标 | number |    0    |  false  |
+
+
+
 ```javascript
 /**
 * @description 传入中心点坐标、半径以及点密度 可直接获取圆上相应点阵坐标
@@ -77,6 +88,16 @@ console.log('pointArray >>',pointArray)
 
 > ### ellipse2point  根据椭圆生成相应点阵坐标
 
+|    params    |    sense    |  type  | default | requrie |
+| :----------: | :---------: | :----: | :-----: | :-----: |
+|      x       | 中心点x坐标 | number |    0    |  false  |
+|      y       | 中心点y坐标 | number |    0    |  false  |
+|   radiusX    | 椭圆x轴半径 | number |   no    |  true   |
+|   radiusY    | 椭圆y轴半径 | number |   no    |  true   |
+| pointDensity | 生成点密度  | number |    1    |  false  |
+
+
+
 ```javascript
 /**
  * @description 根据椭圆生成相应点阵坐标
@@ -93,6 +114,40 @@ console.log('pointArray >>',pointArray)
 ```
 
 ![效果图](https://test.cloudindoormap.com/H5/map/gitImg/ellipse2point.jpg)
+
+
+
+> ### bezierCurve2point 根据贝塞尔曲线生成相应点阵坐标 （含 1-3阶贝塞尔曲线）
+
+
+
+|    params    |    sense     |        type         | default | requrie |
+| :----------: | :----------: | :-----------------: | :-----: | :-----: |
+| pointDensity | 生成点的个数 |       number        |   180   |  true   |
+|      p1      |    p1坐标    | {x:number,y:number} |   no    |  true   |
+|      p2      |    p2坐标    | {x:number,y:number} |   no    |  true   |
+|     cp1      |   控制点1    | {x:number,y:number} |   no    |  false  |
+|     cp2      |   控制点2    | {x:number,y:number} |   no    |  false  |
+
+```javascript
+/**
+ *
+ * @description 贝塞尔曲线转点（含1-3阶贝塞尔曲线）cp1和cp2不传则解析一阶贝塞尔 只传cp1则解析二阶  贝塞尔 cp1和cp2都传则解析三阶贝塞尔
+ * @param {number} [pointDensity=180] 生成贝塞尔曲线上点的个数 默认为180个
+ * @param {AcrPoint} p1 p1坐标
+ * @param {AcrPoint} p2 p2坐标
+ * @param {AcrPoint} cp1 控制点1
+ * @param {AcrPoint} cp2 控制点2
+ * @returns {AcrPoint[]}
+ */
+const pointArray = bezierCurve2point.getBezierCurvePoint(150, { x: 300, y: 250 }, { x: 560, y: 700 }, { x: 320, y: 50 }, { x: 700, y: 500 });
+console.log('pointArray >>',pointArray) 
+// [{x: 300, y: 250},{x: 300.4477392592592, y: 246.08639999999994},...{x: 562.7309274074074, y: 695.9669333333334},{x: 560, y: 700}]
+```
+
+
+
+![效果图](https://test.cloudindoormap.com/H5/map/gitImg/bezierCurve2point.jpg)
 
 ## License
 ```

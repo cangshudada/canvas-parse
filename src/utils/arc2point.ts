@@ -9,9 +9,10 @@ import { AcrPoint } from '../types';
 */
 export const getArcPoint = (radius: number, pointDensity: number = 5, x: number = 0, y: number = 0): AcrPoint[] => {
 
-    let angle = pointDensity;
-    const angleCount = Math.floor(360 / pointDensity);
+    const _pointDensity = Math.abs(pointDensity);
+    const angleCount = Math.floor(360 / _pointDensity);
     const acrPoint: AcrPoint[] = [];
+    let angle = _pointDensity;
 
     for (let i = 0; i < angleCount; i++) {
         const _angle = angle * (i + 1);
