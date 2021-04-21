@@ -14,6 +14,11 @@ class BezierCurve2point {
      */
 
     public getBezierCurvePoint(pointDensity: number = 180, p1: AcrPoint, p2: AcrPoint, cp1?: AcrPoint, cp2?: AcrPoint): AcrPoint[] {
+
+        if (pointDensity <= 0) {
+            throw Error('pointDensity cannot be 0 or negative')
+        }
+
         let points: AcrPoint[] = [];
         // 一阶
         if (!cp1 && !cp2) {
